@@ -43,15 +43,16 @@ Feature support
 <h4>
 ✅ = Working and tested <br>🚧 =  in beta/iffy <br>❌ = in development
 </h4>
-- ✅ train a NN to sort audio<br>
-- ✅ train a NN to sort images<br>
-- ❌ train a NN to sort text<br>
-- ✅ Customizable hidden layers<br>
-- ✅ Customize the number of epochs<br>
-- ✅ Customize optimizer<br>
-- 🚧 Train a NN that inputs audio and outputs audio<br>
-- 🚧 Train a NN that inputs images and outputs images<br>
-- 🚧 Train a NN outputs text<br>
-- ✅ Includes a script that predicts input using trained NN<br>
-- ❌ Includes a script that allows you to label images in a folder<br>
-- ❌ Includes a script that allows you to label audio in a folder<br>
+
+* ✅ train a NN to sort audio<br>
+* ✅ train a NN to sort images<br>
+* ❌ train a NN to sort text<br>
+* ✅ Customizable hidden layers<br>
+* ✅ Customize the number of epochs<br>
+* ✅ Customize optimizer<br>
+* 🚧 Train a NN that inputs audio and outputs audio<br>
+* 🚧 Train a NN that inputs images and outputs images<br>
+* 🚧 Train a NN outputs text<br>
+* ✅ Includes a script that predicts input using trained NN<br>
+* ❌ Includes a script that allows you to label images in a folder<br>
+* ❌ Includes a script that allows you to label audio in a folder<br>
