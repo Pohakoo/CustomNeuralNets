@@ -12,5 +12,6 @@ generate=False # If you aren't making a network that labels or identifies data, 
 possibleLabels=40 # Number of output nodes/number of possible labels. If generate=True, set this to 0.
 device='GPU:1' # The device uesd for training. Runs best on a GPU. If you don't have one, use GPU:0 to use your default CPU. To use a GPU or a different CPU, right click on the windows icon, click task manager, click more details (if that button exists, if not don't), then click preformance. On the left-hand side, your usable GPUs and their IDs will be on the bottom of the list, named something like GPU 1. Set this variable to "GPU:1" or whatever ID you want to use.
 outputFolder = 'B:/documents/DeepShift/model' # this is where the model will be saved so you can use it later.
+optimizer = 'adam' # advanced option. Doesn't really matter with simple networks, but you can choose between "adam", "SGD" (Stochastic gradient descent), "RMSprop" (Root Mean Squared Propagation), "Adagrad" (Adaptive Gradient Algorithm), and "Adadelta".
 
-function.train(dataFolder=dataFolder, outputFolder=outputFolder, labelsIndex=labelsIndex, inputType=inputType, hiddenLayers=hiddenLayers, sameLength=sameLength, generate=generate, possibleLabels=possibleLabels, device=device)
+function.train(dataFolder=dataFolder, outputFolder=outputFolder, labelsIndex=labelsIndex, inputType=inputType, hiddenLayers=hiddenLayers, sameLength=sameLength, generate=generate, possibleLabels=possibleLabels, device=device, optimizer=optimizer)
