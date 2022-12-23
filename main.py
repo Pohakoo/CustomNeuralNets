@@ -45,4 +45,4 @@ except:
     exit()
 
 # for more specific/clearer info, refer to the README.md file in github.
-function.train(dataFolder=dataFolder, outputFolder=outputFolder, labelsIndex=labelsIndex, inputType=inputType, hiddenLayers=hiddenLayers, sameLength=sameLength, generate=generate, possibleLabels=possibleLabels, device=device, optimizer=optimizer)
+function.train(epochs=epochs, dataFolder=dataFolder, outputFolder=outputFolder, labelsIndex=labelsIndex, inputType=inputType, hiddenLayers=hiddenLayers, sameLength=sameLength, generate=generate, possibleLabels=possibleLabels, device=device, optimizer=optimizer)
