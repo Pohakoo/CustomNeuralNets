@@ -21,7 +21,7 @@ In the future, I'll create some scripts that make it easy to create these datase
 **How to train:** start by downloading all of the files in the repository. In your interpreter, install the nessecary packages by running 
 `pip install -r requirements.txt`. Then, open the config.json file. 
 
-The following is a description of what each setting in the config does and what you should set them to. However, if you have a specific set of training data and you know how you want to use it, you can use this [scratch project](https://scratch.mit.edu/projects/780826281/fullscreen/) I made (because why not lol) that's basically a Buzzfeed quiz and it basically gives you suggestions on what the variables should be based on your answers to a few questions.<br>
+The following is a description of what each setting in the config does and what you should set them to. However, if you have a specific set of training data and you know how you want to use it, you can use this [scratch project](https://scratch.mit.edu/projects/780826281/) I made (because why not lol) that's basically a Buzzfeed quiz and it basically gives you suggestions on what the variables should be based on your answers to a few questions.<br>
 
 **epochs:** the number iterations your network goes through. You need to have more than 50 of these. It depends on what you're doing, but for an identification network, 100-500 is utually sufficient. You'll need more for a generation network though, and it will probably take longer per iteration.<br>
 **inputType:** the file extension of your training data. For audio, WAV is best. For images, PNG is best. I also support other image formats. I will soon update this so text is supported, among other things.<br>
