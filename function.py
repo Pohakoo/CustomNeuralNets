@@ -10,8 +10,8 @@ import imageio
 #If the Neural Network takes in audio/images and outputs audio/images, use generate=True and the index.json is formatted like this: {"infile0.ex": "outfile0.ex", "infile1.ex": "outfile1.ex"}
 #It's fine if the file names are different
 
-def train(dataFolder, outputFolder, labelsIndex, epochs=0, inputType='wav', hiddenLayers=[], sameLength=True, generate=False, possibleLabels=0, device='GPU:0', npyoutputfolder=None, npyfilesfolder=None, optimizer="adam"):
-
+def train(dataFolder, outputFolder, labelsIndex, epochs, inputType='wav', hiddenLayers=[], sameLength=True, generate=False, possibleLabels=0, device='GPU:0', npyoutputfolder=None, npyfilesfolder=None, optimizer="adam"):
+    print(epochs)
     if hiddenLayers == []:
         if not generate:
             hiddenLayers = [128, 64, 64]
@@ -35,11 +35,12 @@ def train(dataFolder, outputFolder, labelsIndex, epochs=0, inputType='wav', hidd
         # Iterate over the index data
         for item in index_data:
             # Load the audio data from the .WAV file
-            print(dataFolder + '/' + item)
+            print(item)
             audio, sample_rate = sf.read(dataFolder + '/' + item)
 
-            # Convert the audio data to a NumPy array
+            # Reshape the numpy array
             audio = np.reshape(audio, (audio.shape[0]*2))
+            print(np.shape(audio))
 
             # Add the audio data and label to the lists
             data.append(audio)
@@ -68,10 +69,10 @@ def train(dataFolder, outputFolder, labelsIndex, epochs=0, inputType='wav', hidd
         # Iterate over the index data
         for item in index_data:
             # Load the image data from the .WAV file
-            print(dataFolder + '/' + item)
+            print(item)
             image = imageio.imread(dataFolder + '/' + item)
 
-            # Convert the image data to a NumPy array
+            # Flatten the numpy array
             image = image.flatten()
 
             # Add the image data and label to the lists
@@ -79,9 +80,9 @@ def train(dataFolder, outputFolder, labelsIndex, epochs=0, inputType='wav', hidd
             if not generate:
                 labels.append(index_data[item])
             else:
-                audio, sample_rate = sf.read(dataFolder + '/' + index_data[item])
-                audio = np.reshape(audio, (audio.shape[0] * 2))
-                labels.append(audio)
+                image = imageio.imread(dataFolder + '/' + index_data[item])
+                image = image.flatten()
+                labels.append(image)
 
         # Convert the lists to NumPy arrays
         data = np.array(data)
@@ -162,6 +163,8 @@ def train(dataFolder, outputFolder, labelsIndex, epochs=0, inputType='wav', hidd
     # Train the model and store the training history
     history = model.fit(x_train, y_train, epochs=epochs, validation_data=(x_test, y_test))
 
+    model.save(outputFolder + '/trained_model.h5')
+
     # Extract the accuracy and loss values from the history object
     acc = history.history['accuracy']
     val_acc = history.history['val_accuracy']
@@ -186,4 +189,4 @@ def train(dataFolder, outputFolder, labelsIndex, epochs=0, inputType='wav', hidd
     plt.show()
 
     # Save the trained model to a file
-    model.save(outputFolder + '/trained_model.h5')
+
