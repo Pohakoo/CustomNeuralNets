@@ -16,7 +16,7 @@ def train(dataFolder, outputFolder, labelsIndex, epochs=0, inputType='wav', hidd
         if not generate:
             hiddenLayers = [128, 64, 64]
         else:
-            hiddenLayers = [256, 256, 256]
+            hiddenLayers = [2048, 2048, 2048]
     if epochs == 0:
         if not generate:
             epochs = 100
@@ -43,8 +43,8 @@ def train(dataFolder, outputFolder, labelsIndex, epochs=0, inputType='wav', hidd
 
             # Add the audio data and label to the lists
             data.append(audio)
-            if not generate:
-                labels.append(index_data[item]-45)
+            if generate == False:
+                labels.append(index_data[item])
             else:
                 audio, sample_rate = sf.read(dataFolder + '/' + index_data[item])
                 audio = np.reshape(audio, (audio.shape[0] * 2))
@@ -149,7 +149,7 @@ def train(dataFolder, outputFolder, labelsIndex, epochs=0, inputType='wav', hidd
     x_train, x_test, y_train, y_test = train_test_split(preprocessed_data, labels)
 
     # Define the model architecture
-    with tf.device('/device:'+device):
+    with tf.device('/device:GPU:'+str(device)):
         model = tf.keras.Sequential()
 
     for i in range(0, len(hiddenLayers)-1):
