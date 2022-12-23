@@ -77,7 +77,7 @@ def train(dataFolder, outputFolder, labelsIndex, epochs=0, inputType='wav', hidd
             # Add the image data and label to the lists
             data.append(image)
             if not generate:
-                labels.append(index_data[item] - 45)
+                labels.append(index_data[item])
             else:
                 audio, sample_rate = sf.read(dataFolder + '/' + index_data[item])
                 audio = np.reshape(audio, (audio.shape[0] * 2))
