@@ -50,7 +50,7 @@ Feature support
 * ✅ Customizable hidden layers<br>
 * ✅ Customize the number of epochs<br>
 * ✅ Customize optimizer<br>
-* 🚧 Contains example training data<br>
+* 🚧 Contains example training data > [download here](https://drive.google.com/file/d/15K4D35rS53anJg68fpmE48BaByK8ojI7/view?usp=share_link)<br>
 * 🚧 Train a NN that inputs audio and outputs audio<br>
 * 🚧 Train a NN that inputs images and outputs images<br>
 * 🚧 Train a NN outputs text<br>
