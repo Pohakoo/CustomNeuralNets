@@ -10,7 +10,7 @@ import imageio
 #If the Neural Network takes in audio/images and outputs audio/images, use generate=True and the index.json is formatted like this: {"infile0.ex": "outfile0.ex", "infile1.ex": "outfile1.ex"}
 #It's fine if the file names are different
 
-def train(dataFolder, outputFolder, labelsIndex, epochs=0, inputType='wav', hiddenLayers=[], sameLength=True, generate=False, possibleLabels=0, device='CPU:0', npyoutputfolder=None, npyfilesfolder=None):
+def train(dataFolder, outputFolder, labelsIndex, epochs=0, inputType='wav', hiddenLayers=[], sameLength=True, generate=False, possibleLabels=0, device='GPU:0', npyoutputfolder=None, npyfilesfolder=None, optimizer="adam"):
 
     if hiddenLayers == []:
         if not generate:
@@ -157,7 +157,7 @@ def train(dataFolder, outputFolder, labelsIndex, epochs=0, inputType='wav', hidd
     model.add(tf.keras.layers.Dense(possibleLabels, activation='softmax'))
 
     # Compile the model
-    model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+    model.compile(optimizer=optimizer, loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
     # Train the model and store the training history
     history = model.fit(x_train, y_train, epochs=epochs, validation_data=(x_test, y_test))
