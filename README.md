@@ -16,9 +16,9 @@ If you want to train a generation network, you need about 150+ peices of data. I
 In the future, I'll create some scripts that make it easy to create these datasets and also automatically generate index.json files.
 
 How to train: start by downloading all of the files in the repository. In your interpreter, install the nessecary packages by running 
-`pip install -r requirements.txt`. Then, open the main.py file. Customize the variables in the section marked "CHANGE THESE VARIABLES". 
+`pip install -r requirements.txt`. Then, open the config.json file. 
 
-The following is a description of what each variable does and what you should set them to. However, if you have a specific set of training data and you know how you want to use it, you can use this scratch project I made (because why not lol) that's basically a Buzzfeed quiz and it basically gives you suggestions on what the variables should be based on your answers to a few questions.
+The following is a description of what each setting in the config does and what you should set them to. However, if you have a specific set of training data and you know how you want to use it, you can use this scratch project I made (because why not lol) that's basically a Buzzfeed quiz and it basically gives you suggestions on what the variables should be based on your answers to a few questions.
 [INSERT SCRATCH LINK]
 
 epochs: the number iterations your network goes through. You need to have more than 50 of these. It depends on what you're doing, but for an identification network, 100-500 is utually sufficient. You'll need more for a generation network though, and it will probably take longer per iteration.
@@ -39,4 +39,4 @@ Optimizer: advanced option. Doesn't really matter with simple networks, but you 
 
 Once all these variables are set, run main.py. It will ask you to tell it where your input data is, where your index.json file is, and where you want your network to be saved. Then it will run. It will keep you updated in the console. Once it's finished, you will find a trained_network.h5 file in your output destination. Time to use your network. 
 
-How to predict: 
+How to predict: run the predict.py script. It will ask you to select your trained_model.h5 file and the input data file. It will then reutrn a prediction and a confidence value, along with the confidence values for all the other output nodes.
