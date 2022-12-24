@@ -4,6 +4,7 @@ import soundfile as sf
 import tensorflow as tf
 import imageio
 import json
+from PIL import Image
 from tkinter import filedialog
 
 noteNum = 10
@@ -35,13 +36,38 @@ def predict_image_identification():
     # Use the model to predict the category of the image
     return model.predict(image)
 
+def predict_image_generate():
+    inimage = imageio.imread(inputFile)
+    # Flatten the numpy array
+    inimage = inimage.reshape(1, -1)
 
-if config['inputType'].lower() == "wav":
-    prediction = predict_audio_identification()
-if config['inputType'].lower() == "png" or config['inputType'].lower() == "jpg" or config['inputType'].lower() == "jpeg" or config['inputType'].lower() == "bmp" or config['inputType'].lower() == "tiff" or config['inputType'].lower() == "gif" or config['inputType'].lower() == "pdf" or config['inputType'].lower() == "svg":
-    prediction = predict_image_identification()
+    outFolder = str(filedialog.askdirectory(title="Please select the folder for the output image to be saved to"))
 
-# Print the prediction
-list = np.ndarray.tolist(prediction[0])
-most_probable = list.index(max(list))
-print("The note is most likely note " + str(most_probable) + ". The confidence is " + str(round(max(list))*100) + "%.")
+    prediction = model.predict(inimage)
+
+    image = Image.open(inputFile)
+
+    width, height = image.size
+
+    outImage = prediction.reshape((width, height))
+
+    outImage = Image.fromarray(outImage)
+
+    outImage.save(outFolder + "/result.png")
+    
+    return "Saved image to " + outFolder + "/result.png"
+
+if config['generate'].lower() == 'false':
+    if config['inputType'].lower() == "wav":
+        prediction = predict_audio_identification()
+    if config['inputType'].lower() == "png" or config['inputType'].lower() == "jpg" or config['inputType'].lower() == "jpeg" or config['inputType'].lower() == "bmp" or config['inputType'].lower() == "tiff" or config['inputType'].lower() == "gif" or config['inputType'].lower() == "pdf" or config['inputType'].lower() == "svg":
+        prediction = predict_image_identification()
+
+    # Print the prediction
+    list = np.ndarray.tolist(prediction[0])
+    most_probable = list.index(max(list))
+    print("The note is most likely note " + str(most_probable) + ". The confidence is " + str(round(max(list)) * 100) + "%.")
+
+elif config['generate'].lower() == 'true':
+    
+    print(predict_image_generate())
