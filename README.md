@@ -10,6 +10,8 @@ If you have a basic conceptial knowledge of how neural networks work, and have s
 CGP Grey's HOW MACHINES LEARN: https://youtu.be/R9OHn5ZF4Uo<br>
 3Blue1Brown's BUT WHAT IS A NEURAL NETWORK? Chapters 1 and 2: https://youtu.be/aircAruvnKk https://youtu.be/IHZwWFHWa-w (chapter 2 is optional)
 
+If you need help, feel free to join my [Discord server](https://dsc.gg/Pohakoo), create a ticket, and ping me with your question (I'm the owner, @Pohakoo#0001).
+
 **What you need:** You need a dataset (a bunch of images or audio clips in a folder) and labels. This script supports neural netwoks of two types, **identification and generation.** The identification type trains a network to label, identify, or categorize an image or audio clip. The generation type trains a network to take an image or audio clip as input, and then output another image or audio clip. This type is still in beta. 
 
 **If you want to train an identification network,** you need about 40+ peices of data. If the data is images, they all should be the same/similar size. If the data is audio, they should all be the same/similar length. If the data is very different in size or length, there's an option that supports this, but it's not reccommended. You also need an index.json file that labels each peice of data. It should be formatted like this: `{"file0.wav" : 9, "file1.wav" : 2...}`. The files do not have to have any specific name, but they each need to have a label. For example, if your neural network recognizes song genre, the index might look like this: `{"rock1.wav" : 3, "jazz1.wav" : 1, "pop1.wav" : 2, "rock2.wav" : 3...}` in this case, jazz is 1, pop is 2, and rock is 3. The labels have to be integers if you're doing this type of network.
