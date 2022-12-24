@@ -45,16 +45,17 @@ Feature support
 ✅ = Working and tested <br>🚧 =  in beta/iffy <br>❌ = in development
 </h4>
 
-* ✅ train a NN to sort audio<br>
-* ✅ train a NN to sort images<br>
-* ❌ train a NN to sort text<br>
-* ✅ Customizable hidden layers<br>
-* ✅ Customize the number of epochs<br>
-* ✅ Customize optimizer<br>
-* 🚧 Contains example training data > [download here](https://drive.google.com/file/d/15K4D35rS53anJg68fpmE48BaByK8ojI7/view?usp=share_link)<br>
+* ✅ train a NN to identify audio<br>
+* ✅ train a NN to identify images<br>
+* ❌ train a NN to identify text<br>
 * 🚧 Train a NN that inputs audio and outputs audio<br>
 * 🚧 Train a NN that inputs images and outputs images<br>
-* 🚧 Train a NN outputs text<br>
-* ✅ Includes a script that predicts input using trained NN<br>
+* ❌ Train a NN outputs text<br>
+* ✅ Customizable hidden layers<br>
+* ✅ Customize the number of epochs<br>
+* 🚧 Example training data > [Download here](https://drive.google.com/file/d/15K4D35rS53anJg68fpmE48BaByK8ojI7/view?usp=share_link)<br>
+* ✅ Prediction script categorizes input using trained model<br>
+* ❌ Prediction script generates output based on input and trained model<br>
 * ❌ Includes a script that allows you to label images in a folder<br>
 * ❌ Includes a script that allows you to label audio in a folder<br>
+* ✅ Customizable training optimizer<br>
