@@ -189,4 +189,3 @@ def train(dataFolder, outputFolder, labelsIndex, epochs, inputType='wav', hidden
     plt.show()
 
     # Save the trained model to a file
-
