@@ -22,7 +22,7 @@ try:
     hiddenLayers = config['hiddenLayers'] # the hidden layers of the network in between the input and output layers. You should be able to figure out what these values should be if you have a basic conceptual knowledge of neural network structure.
     sameLength = config['sameLength'] # also can be true if they're similar but not exactly the same in length
     generate = config['generate'] # If you aren't making a network that labels or identifies data, and are making one that generates new data based on old data (audio cleanup, for example), set this to True.
-    possibleLabels = config['possibleLabels'] # Number of output nodes/number of possible labels. If generate=True, set this to 0.
+    possibleLabels = config['possibleLabels']+1 # Number of output nodes/number of possible labels. If generate=True, set this to 0.
     device = config['device'] # The device uesd for training. Runs best on a GPU. If you don't have one, use GPU:0 to use your default CPU. To use a GPU or a different CPU, right click on the windows icon, click task manager, click more details (if that button exists), then click preformance. On the left-hand side, your usable GPUs and their IDs will be on the bottom of the list, named something like GPU 1. Set this variable to "1" or whatever ID you want to use.
     optimizer = config['optimizer'] # advanced option. Doesn't really matter with simple networks, but you can choose between "adam", "SGD" (Stochastic gradient descent), "RMSprop" (Root Mean Squared Propagation), "Adagrad" (Adaptive Gradient Algorithm), and "Adadelta".
 
