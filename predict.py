@@ -66,7 +66,7 @@ if config['generate'].lower() == 'false':
     # Print the prediction
     list = np.ndarray.tolist(prediction[0])
     most_probable = list.index(max(list))
-    print("The note is most likely note " + str(most_probable) + ". The confidence is " + str(round(max(list)) * 100) + "%.")
+    print("The note is most likely output is " + str(most_probable) + ". The confidence is " + str(round(max(list)) * 100) + "%.")
 
 elif config['generate'].lower() == 'true':
     
