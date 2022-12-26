@@ -51,13 +51,13 @@ Feature support
 * ✅ train a NN to identify images<br>
 * ❌ train a NN to identify text<br>
 * 🚧 Train a NN that inputs audio and outputs audio<br>
-* 🚧 Train a NN that inputs images and outputs images<br>
+* ✅ Train a NN that inputs images and outputs images<br>
 * ❌ Train a NN outputs text<br>
 * ✅ Customizable hidden layers<br>
 * ✅ Customize the number of epochs<br>
-* 🚧 Example training data > [Download here](https://drive.google.com/file/d/15K4D35rS53anJg68fpmE48BaByK8ojI7/view?usp=share_link)<br>
+* 🚧 Example training data > [Download here](https://drive.google.com/file/d/1pyyASXhkwfLAaozpxrGjW6MGeftBk1kW/view?usp=share_link)<br>
 * ✅ Prediction script categorizes input using trained model<br>
-* 🚧 Prediction script generates images based on input and trained model<br>
+* ✅ Prediction script generates images based on input and trained model<br>
 * ❌ Prediction script generates audio based on input and trained model<br>
 * ❌ Includes a script that allows you to label images in a folder<br>
 * ❌ Includes a script that allows you to label audio in a folder<br>
