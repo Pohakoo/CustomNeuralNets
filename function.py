@@ -167,13 +167,14 @@ def train(dataFolder, outputFolder, labelsIndex, epochs, inputType='wav', hidden
         return padded_data, target_length
 
     # Preprocess the data
-    if np.shape(data)[0] * np.shape(labels)[0] > 2147483646 or np.shape(labels)[0] * np.shape(labels)[0] < 1:
-        print("too much input data! Remove some inputs or make the inputs smaller and try again.")
-        exit()
-    if np.shape(labels)[0] * np.shape(labels)[0] > 2147483646 or np.shape(labels)[0] * np.shape(labels)[0] < 1:
-        print("too much output data! Remove some outputs or make the outputs smaller and try again.")
-        exit()
-    print("preprocessing data...")
+    if generate:
+        if np.shape(data)[0] * np.shape(labels)[0] > 2147483646 or np.shape(labels)[0] * np.shape(labels)[0] < 1:
+            print("too much input data! Remove some inputs or make the inputs smaller and try again.")
+            exit()
+        if np.shape(labels)[0] * np.shape(labels)[0] > 2147483646 or np.shape(labels)[0] * np.shape(labels)[0] < 1:
+            print("too much output data! Remove some outputs or make the outputs smaller and try again.")
+            exit()
+        print("preprocessing data...")
     if not generate:
         preprocessed_data, inputLength = pad_or_truncate_to_average(data, sameLength)
         labels = labels.reshape((labels.shape[0], 1))
