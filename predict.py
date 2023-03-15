@@ -54,7 +54,7 @@ def predict_image_generate():
     outImage = Image.fromarray(outImage)
 
     outImage.save(outFolder + "/result.png")
-    
+
     return "Saved image to " + outFolder + "/result.png"
 
 if config['generate'].lower() == 'false':
@@ -69,5 +69,7 @@ if config['generate'].lower() == 'false':
     print("The note is most likely output is " + str(most_probable) + ". The confidence is " + str(round(max(list)) * 100) + "%.")
 
 elif config['generate'].lower() == 'true':
-    
+
     print(predict_image_generate())
+
+

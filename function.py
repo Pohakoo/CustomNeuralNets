@@ -200,8 +200,10 @@ def train(dataFolder, outputFolder, labelsIndex, epochs, inputType='wav', hidden
     print(np.shape(x_test))
     print(np.shape(y_test))
 
+    print("detected devices: " + str(tf.config.list_physical_devices()))
     # Define the model architecture
-    with tf.device('/device:GPU:'+str(device)):
+    with tf.device('/GPU:'+str(device)):
+        print('running on GPU:'+str(device))
         model = tf.keras.Sequential()
 
     for i in range(0, len(hiddenLayers)-1):

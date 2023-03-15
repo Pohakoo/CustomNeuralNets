@@ -1,0 +1,3 @@
+This script will go through your own files in a folder and ask you to identify them.
+This script should be used if you have an unlabeled dataset you created on your own.
+Works with both audio and images, identification and generation.

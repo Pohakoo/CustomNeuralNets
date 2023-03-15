@@ -4,3 +4,4 @@ numpy
 scikit-learn
 soundfile
 imageio
+tkinter

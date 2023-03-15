@@ -1,1 +1,1 @@
-{"epochs" : 100, "inputType" : "wav", "hiddenLayers" : [128, 64, 32], "sameLength" : "True", "generate" : "False", "possibleLabels" : 10, "device" : "0", "optimizer" : "adam"}
+{"epochs" : 30, "inputType" : "WAV", "hiddenLayers" : [2048, 2048, 2048], "sameLength" : "True", "generate" : "True", "possibleLabels" : 0, "device" : "1", "optimizer" : "adam"}

@@ -1,0 +1,2 @@
+This script plays a random note, and then asks you to sing that note.
+When you train the network, it will learn to identify the note sung in any WAV file.
