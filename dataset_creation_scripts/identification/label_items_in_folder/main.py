@@ -16,14 +16,14 @@ def check_file_type(file_path: str) -> str:
 
 def play_audio(file_path: str):
     subprocess.run(["afplay", file_path])
-    num = input("Please input a number between 1 and your selected number: ")
+    num = input("Label this audio: ")
     return num
 
 def show_image(file_path: str):
     from PIL import Image
     img = Image.open(file_path)
     img.show()
-    num = input("Please input a number between 1 and your selected number: ")
+    num = input("Label this image: ")
     return num
 
 def save_data(file_path: str, folder: str, num: str):
@@ -33,7 +33,6 @@ def save_data(file_path: str, folder: str, num: str):
         json.dump(data, f)
 
 if __name__ == "__main__":
-    selected_num = input("Please select a number from 1-500:")
     file_path, folder = get_file_and_folder()
     file_type = check_file_type(file_path)
     if file_type == ".wav":
